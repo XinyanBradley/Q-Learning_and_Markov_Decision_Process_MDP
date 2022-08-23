@@ -3,7 +3,7 @@ To understand this specification and the program, readers are assumed to have th
 
 This document serves as a technical specification and user guidance for the C++ program. The complete script contains the files shown the figure below.  The program has a set of environments and a set of Learningstrategy.  The Learningstrategy, which can be markov decision process (MDP) agent or Q-learning agent in the current version, will look for the optimal scenarios in the environment under given circumstances. In principle, the program allows the users to implement their own environments as subclasses of the base environment class, env_base, upon their needs. These user-implemented environments should be compatible with the MDP and Q-learning agent as long as the  interface defined in env_base is followed. Details of these files and the overall architecture of the program will be covered in section 2.
 
-<img src="./images/files.png" alt="drawing" width="600"/>
+<img src="./images/files.png" alt="drawing" width="200"/>
 
 ## Software Architecture
 As stated in Section 1, in the program, the Learningstrategy will look for the optimal operation scenarios in the environment.
