@@ -5,6 +5,10 @@ This document serves as a technical specification and user guidance for the C++ 
 
 <img src="./images/files.PNG" alt="drawing" width="600"/>
 
+## Software Architecture
+As stated in Section 1, in the program, the Learningstrategy will look for the optimal operation scenarios in the environment.
+
+
 ## 4 Bibliography
 
 [1] 	UC Berkeley, "UC Berkeley CS188 Intro to AI -- Course Materials," [Online]. Available: http://ai.berkeley.edu/lecture_videos.html.
