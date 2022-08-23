@@ -42,6 +42,32 @@ Detailed mathematics and principles of Q-learning can also be found in Berkeleyâ
 
 <img src="./images/qlearning.png" alt="drawing" width="500"/>
 
+When choosing the action a to take, there are two approaches: 1) randomly choose an action in the candidate action pool (exploration) and 2) pick the action with the highest Q value in the current Q_value_table (exploitation).  As shown in is shown in the figure above, the approach to adopt is determined stochastically, and the probability is determined by the parameter epsilon.  Usually, epsilon starts to be 1, gradually decreases and finally reaches 0 at the end of the iteration.  The net effect is that, at the beginning of the learning process when the Q-learning agent knows very little about the environment, the agent tends to take random actions to explore the environment.  As iterations go, the agent will tend to converge the Q values along the optimal scenarios.  More details can be found in [1].
+
+Also note that the Q-value-update step is different from the counterpart in the MDP scheme. It is OK to use either.
+
+## 3 Demonstration Using Gridworld
+
+Letâ€™s use the gridworld example to demonstrate the performance of the two algorithms.  As shown in the figure below, the agent starts at the bottom left corner and ends at either +1 or -1 with the corresponding reward.  At each step, the agent has 4 possible actions: north (N), south (S), west (W) and east (E).  To make the rule more general, each action only has a probability of 80% to be executed correctly and 20% slip to the sides.  For example, if the action is E, the agent has 80% going to the east, 10% to the north and 10% to the south.  Also, if the agent hit the wall or the solid block, it will stay at where it was.  Discount rate is 0.95 and costs to take an action is 0.01.
+
+<img src="./images/Gridworld_Map.png" alt="drawing" width="500"/>
+
+Results are shown in Table I and 
+Table II.  There are some interesting conclusions
+1)	Both the agents give the correct optimal scenario: N->N->E->E->1 even with the lowest max_iter setting.
+2)	MDP even suggested the correct actions to take for states not on the optimal scenarios.  Q-learning failed on this task.  The reason could be that the epsilon decay approach makes the Q-learning agent concentrate more on the optimal scenario less likely to explore states off the optimal scenario.
+3)	2) is more obvious when looking at the Q-value map.
+4)	For the same number of iterations, Q-learning takes less than half the time taken by MDP.
+
+Table I:
+
+<img src="./images/MDP_result.png" alt="drawing" width="1000"/>
+
+Table II:
+
+
+<img src="./images/qlearning_result.png" alt="drawing" width="1000"/>
+
 
 ## 4 Bibliography
 
