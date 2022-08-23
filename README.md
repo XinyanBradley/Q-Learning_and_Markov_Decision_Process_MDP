@@ -5,6 +5,8 @@ This document serves as a technical specification and user guidance for the C++ 
 
 <img src="./images/files.png" alt="drawing" width="200"/>
 
+
+
 ## 2 Software Architecture
 As stated in Section 1, in the program, the Learningstrategy will look for the optimal operation scenarios in the environment.
 
@@ -46,6 +48,8 @@ When choosing the action a to take, there are two approaches: 1) randomly choose
 
 Also note that the Q-value-update step is different from the counterpart in the MDP scheme. It is OK to use either.
 
+
+
 ## 3 Demonstration Using Gridworld
 
 Let’s use the gridworld example to demonstrate the performance of the two algorithms.  As shown in the figure below, the agent starts at the bottom left corner and ends at either +1 or -1 with the corresponding reward.  At each step, the agent has 4 possible actions: north (N), south (S), west (W) and east (E).  To make the rule more general, each action only has a probability of 80% to be executed correctly and 20% slip to the sides.  For example, if the action is E, the agent has 80% going to the east, 10% to the north and 10% to the south.  Also, if the agent hit the wall or the solid block, it will stay at where it was.  Discount rate is 0.95 and costs to take an action is 0.01.
@@ -69,9 +73,13 @@ Table II:
 <img src="./images/qlearning_result.png" alt="drawing" width="1000"/>
 
 
+
 ## 4 Bibliography
 
 [1] 	UC Berkeley, "UC Berkeley CS188 Intro to AI -- Course Materials," [Online]. Available: http://ai.berkeley.edu/lecture_videos.html.
+
 [2] 	Google Inc., "What is Colaboratory," [Online]. Available: https://colab.research.google.com/?utm_source=scs-index#scrollTo=5fCEDCU_qrC0.
+
 [3] 	FMPy Group, "FMPy," [Online]. Available: https://fmpy.readthedocs.io/en/latest/.
+
 [4] 	FMPy Group, "FMPy Tutorial," [Online]. Available: https://fmpy.readthedocs.io/en/latest/tutorial/.
