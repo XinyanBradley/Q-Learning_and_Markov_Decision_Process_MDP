@@ -71,7 +71,6 @@ action_base* learningstrategy_ql::get_random_action(state_base* state_ptr) {
 }
 
 //sample = R(s, a, s') + discount * max_a'{Q(s', a')}
-//sample = sum over all s' [T(s, a, s') (R(s, a, s') + discount * V(s'))]
 double learningstrategy_ql::Q_sample_val(state_base* this_state_ptr,
                                          action_base* this_action_ptr,
                                          state_base* next_state_ptr) {
