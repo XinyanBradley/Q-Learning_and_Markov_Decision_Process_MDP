@@ -6,7 +6,7 @@ using namespace std;
 //sample the actual next state from all possible next states
 state_base* learningstrategy_ql::actual_next_state(state_base* this_state_ptr,
                                                    action_base* this_action_ptr) {
-    //get the possible next states and corresponding transitino probabilities
+    //get the possible next states and corresponding transition probabilities
     //at the current state and action
     vector<state_base*> next_states = env_ptr->NextState_state(this_state_ptr, this_action_ptr);
     vector<double> next_probs = env_ptr->NextState_prob(this_state_ptr, this_action_ptr);
@@ -42,9 +42,8 @@ state_base* learningstrategy_ql::actual_next_state(state_base* this_state_ptr,
     return next_states[actual_i];
 }
 
-//randomly choose a next state. Used for exploration in q-learning
+//for exploration.  Randomly choose an action
 action_base* learningstrategy_ql::get_random_action(state_base* state_ptr) {
-    //for exploration.  Randomly choose an action
     vector<action_base* > action_ptr_vec = env_ptr->LegalActions(state_ptr);
     if(action_ptr_vec.size() == 0) {
         cout << "state " << state_ptr->GetStringVal() << " has no legal actions." << endl;
