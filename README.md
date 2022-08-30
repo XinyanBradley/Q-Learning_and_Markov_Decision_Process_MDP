@@ -69,7 +69,6 @@ Table I:
 
 Table II:
 
-
 <img src="./images/qlearning_result.png" alt="drawing" width="1000"/>
 
 
